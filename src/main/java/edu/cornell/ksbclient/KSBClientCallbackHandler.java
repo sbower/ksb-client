@@ -1,4 +1,4 @@
-package edu.cornell.ksdbclient;
+package edu.cornell.ksbclient;
 
 import java.io.IOException;
 import javax.security.auth.callback.Callback;

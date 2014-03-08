@@ -1,4 +1,4 @@
-package edu.cornell.ksdbclient;
+package edu.cornell.ksbclient;
 
 import java.net.URL;
 import java.util.HashMap;

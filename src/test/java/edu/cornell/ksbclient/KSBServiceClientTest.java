@@ -1,4 +1,4 @@
-package edu.cornell.ksdbclient;
+package edu.cornell.ksbclient;
 
 import static org.junit.Assert.assertEquals;
 
@@ -6,6 +6,8 @@ import java.net.URL;
 import org.junit.Test;
 import org.kuali.rice.core.v2_0.ParameterKeyType;
 import org.kuali.rice.core.v2_0.ParameterService;
+
+import edu.cornell.ksbclient.KSBServiceClient;
 
 public class KSBServiceClientTest {
 	
