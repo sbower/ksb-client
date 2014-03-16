@@ -15,7 +15,7 @@ namespace_code = ARGV[2] || "KR-WKFLW"
 parm_name = ARGV[3] || "ACTION_LIST_DOCUMENT_POPUP_IND"
 
 client = KSBServiceClient.new
-svc = client.getParameterService(URL.new("http://demo.rice.kuali.org/remoting/soap/core/v2_0/parameterRepositoryService?wsdl"))
+svc = client.getParameterService()
 
 pk = ParameterKeyType.new
 pk.setApplicationId(application_id)

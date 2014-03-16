@@ -18,13 +18,11 @@ import javax.xml.ws.WebServiceFeature;
  * 
  */
 @WebServiceClient(name = "parameterRepositoryService", targetNamespace = "http://rice.kuali.org/core/v2_0", wsdlLocation = "http://demo.rice.kuali.org/remoting/soap/core/v2_0/parameterRepositoryService?wsdl")
-public class ParameterRepositoryService
-    extends Service
-{
+public class ParameterRepositoryService extends Service {
 
     private final static URL PARAMETERREPOSITORYSERVICE_WSDL_LOCATION;
     private final static Logger logger = Logger.getLogger(org.kuali.rice.core.v2_0.ParameterRepositoryService.class.getName());
-
+    
     static {
         URL url = null;
         try {
@@ -40,6 +38,10 @@ public class ParameterRepositoryService
 
     public ParameterRepositoryService(URL wsdlLocation, QName serviceName) {
         super(wsdlLocation, serviceName);
+    }
+    
+    public ParameterRepositoryService(String baseUrl) throws MalformedURLException {
+      super(new URL(baseUrl + "/remoting/soap/core/v2_0/parameterRepositoryService?wsdl"), new QName("http://rice.kuali.org/core/v2_0", "parameterRepositoryService"));
     }
 
     public ParameterRepositoryService() {

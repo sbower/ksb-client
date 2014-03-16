@@ -2,21 +2,22 @@ package edu.cornell.ksbclient;
 
 import static org.junit.Assert.assertEquals;
 
-import java.net.URL;
+import java.util.List;
+
 import org.junit.Test;
 import org.kuali.rice.core.v2_0.ParameterKeyType;
 import org.kuali.rice.core.v2_0.ParameterService;
-
-import edu.cornell.ksbclient.KSBServiceClient;
+import org.kuali.rice.core.v2_0.StringMapEntryListType;
+import org.kuali.rice.kim.v2_0.RoleService;
 
 public class KSBServiceClientTest {
 	
 	@Test
 	public void parameterServiceTest() throws Exception {
-		KSBServiceClient client = new KSBServiceClient();
+	  KSBServiceClient client = new KSBServiceClient();
 		
-		ParameterService svc = client.getParameterService( new URL( "http://demo.rice.kuali.org/remoting/soap/core/v2_0/parameterRepositoryService?wsdl" ) );
-		//Campuses campuses = svc.findAllCampuses();
+    ParameterService svc = client.getParameterService();
+
 		ParameterKeyType pk = new ParameterKeyType();
 		pk.setApplicationId("KUALI");
 		pk.setComponentCode("ActionList");
@@ -27,7 +28,17 @@ public class KSBServiceClientTest {
 
 		
 		assertEquals( "Y", value );
-		System.out.printf( "Parameter values is  %s \n", value);
 
 	}
+	
+	 @Test
+	  public void roleServiceTest() throws Exception {
+	    KSBServiceClient client = new KSBServiceClient();	    
+	    RoleService svc = client.getRoleService();
+
+	    List<String> ids = svc.getRoleMemberPrincipalIds("KR-SYS", "System User", new StringMapEntryListType()).getPrincipalId();
+
+	    assertEquals( "1", ids.get(0) );
+
+	  }
 }

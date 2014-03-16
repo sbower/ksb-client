@@ -10,18 +10,22 @@ import org.apache.ws.security.WSPasswordCallback;
 public class KSBClientCallbackHandler implements CallbackHandler {
 
 	public void handle( Callback[] callbacks ) throws IOException, UnsupportedCallbackException {
-		for( Callback thisCallback : callbacks )
-		{
+		for( Callback thisCallback : callbacks ) {
+		  
+		  //Let's make sure this is the signature callback
 			WSPasswordCallback pwcb = (WSPasswordCallback)thisCallback;
 			String user = pwcb.getIdentifier();
 			int usage = pwcb.getUsage();
 			
-			if( usage == WSPasswordCallback.SIGNATURE )
-			{
-				// this is to provide the password for the alias within the keystore
-				//  - while it is the same value as the keystore name and password,
-				//  - you could craft a different alias than the keystore user
-				if( "rice".equals( user ) ) pwcb.setPassword( "r1c3pw" );
+			//got call back, have to set key store password
+			if( usage == WSPasswordCallback.SIGNATURE ) {
+			  
+			  if( KSBClientProperties.DEFAULT_SIGNATURE_USER.equals( user ) ) {
+			    pwcb.setPassword( "r1c3pw" );
+			  } else {
+			      //Grab key store pass from the crypto properties
+		       pwcb.setPassword(KSBServiceClient.getProperty(KSBClientProperties.KEY_STORE_PASSWORD));
+			  }
 			}
 		}		
 	}
