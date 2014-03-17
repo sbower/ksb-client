@@ -15,6 +15,8 @@ import org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor;
 import org.apache.ws.security.handler.WSHandlerConstants;
 import org.kuali.rice.core.v2_0.ParameterRepositoryService;
 import org.kuali.rice.core.v2_0.ParameterService;
+import org.kuali.rice.kim.v2_0.IdentityService;
+import org.kuali.rice.kim.v2_0.IdentityService_Service;
 import org.kuali.rice.kim.v2_0.RoleService;
 import org.kuali.rice.kim.v2_0.RoleService_Service;
 
@@ -80,6 +82,21 @@ public class KSBServiceClient {
     }
   }
 
+  public IdentityService getIdentityService() {
+    IdentityService_Service svc;
+    
+    try {
+      svc = new IdentityService_Service(baseURL);
+      IdentityService rolseService = svc.getIdentityServicePort();
+      
+      setWSS4JOutInterceptor(rolseService);
+      return rolseService;
+    } catch (MalformedURLException e) {
+      System.err.println("Invalid URL: " + baseURL);
+      return null;
+    }
+  }
+  
   public static String getProperty(String key) {
     return properties.getProperty(key);
   }
