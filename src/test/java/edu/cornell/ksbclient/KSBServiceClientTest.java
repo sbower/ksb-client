@@ -1,13 +1,16 @@
 package edu.cornell.ksbclient;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.kuali.rice.core.v2_0.ParameterKeyType;
 import org.kuali.rice.core.v2_0.ParameterService;
 import org.kuali.rice.core.v2_0.StringMapEntryListType;
+import org.kuali.rice.kew.v2_0.WorkflowDocumentActionsService;
 import org.kuali.rice.kim.v2_0.EntityType;
 import org.kuali.rice.kim.v2_0.IdentityService;
 import org.kuali.rice.kim.v2_0.RoleService;
@@ -49,9 +52,16 @@ public class KSBServiceClientTest {
      KSBServiceClient client = new KSBServiceClient();     
      IdentityService svc = client.getIdentityService();
 
-     //List<String> ids = svc.getRoleMemberPrincipalIds("KR-SYS", "System User", new StringMapEntryListType()).getPrincipalId();
      EntityType et = svc.getEntityByPrincipalId("1");
      assertEquals( "kr", et.getPrincipals().getPrincipal().get(0).getPrincipalName());
 
+   }
+   
+   @Test @Ignore
+   public void workflowDocumentActionsServiceTest () throws Exception {
+	   KSBServiceClient client = new KSBServiceClient();  
+	   WorkflowDocumentActionsService svc = client.getWorkflowDocumentActionsService();
+	   
+	   assertTrue(svc.isUserInRouteLog("3039", "admin", false));
    }
 }
