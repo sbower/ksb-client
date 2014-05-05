@@ -14,6 +14,10 @@ import org.kuali.rice.kew.v2_0.WorkflowDocumentActionsService;
 import org.kuali.rice.kim.v2_0.EntityType;
 import org.kuali.rice.kim.v2_0.IdentityService;
 import org.kuali.rice.kim.v2_0.RoleService;
+import org.kuali.rice.location.v2_0.CountryService;
+import org.kuali.rice.location.v2_0.PostalCodeService;
+import org.kuali.rice.location.v2_0.PostalCodeType;
+import org.kuali.rice.location.v2_0.StateService;
 
 public class KSBServiceClientTest {
 	
@@ -63,5 +67,30 @@ public class KSBServiceClientTest {
 	   WorkflowDocumentActionsService svc = client.getWorkflowDocumentActionsService();
 	   
 	   assertTrue(svc.isUserInRouteLog("3039", "admin", false));
+   }
+   
+   @Test
+   public void countryServiceTest() throws Exception {
+	   KSBServiceClient client = new KSBServiceClient();  
+	   CountryService svc = client.getCountryService();
+	
+	   assertEquals("US", svc.getDefaultCountry().getCode());
+   }
+   
+   @Test @Ignore
+   public void postalServiceTest() throws Exception {
+	   KSBServiceClient client = new KSBServiceClient();  
+	   PostalCodeService svc = client.getPostalCodeService();
+	
+	   PostalCodeType pt = svc.getPostalCode("US", "14845");
+	   assertEquals("HORSEHEADS", pt.getCityName());
+   }
+   
+   @Test
+   public void stateServiceTest() throws Exception {
+	   KSBServiceClient client = new KSBServiceClient();  
+	   StateService svc = client.getStateService();
+	
+	   assertEquals("NEW YORK", svc.getState("US", "NY").getName());
    }
 }

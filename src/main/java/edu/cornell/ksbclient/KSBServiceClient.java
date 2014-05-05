@@ -20,6 +20,9 @@ import org.kuali.rice.core.v2_0.ParameterService;
 import org.kuali.rice.kew.v2_0.WorkflowDocumentActionsService;
 import org.kuali.rice.kim.v2_0.IdentityService;
 import org.kuali.rice.kim.v2_0.RoleService;
+import org.kuali.rice.location.v2_0.CountryService;
+import org.kuali.rice.location.v2_0.PostalCodeService;
+import org.kuali.rice.location.v2_0.StateService;
 
 public class KSBServiceClient {
   
@@ -70,6 +73,21 @@ public class KSBServiceClient {
   public WorkflowDocumentActionsService getWorkflowDocumentActionsService() {
 	  return getService(KSBClientProperties.WORKFLOW_ACTION_WSDL_LOCATION, KSBClientProperties.QNAME_WORKFLOW_ACTION_SERVICE,
 		  		KSBClientProperties.QNAME_WORKFLOW_ACTION_SERVICE_PORT, WorkflowDocumentActionsService.class);
+  }
+  
+  public CountryService getCountryService() {
+	  return getService(KSBClientProperties.COUNTRY_WSDL_LOCATION, KSBClientProperties.QNAME_COUNTRY_SERVICE,
+		  		KSBClientProperties.QNAME_COUNTRY_SERVICE_PORT, CountryService.class);
+  }
+  
+  public PostalCodeService getPostalCodeService() {
+	  return getService(KSBClientProperties.POSTAL_WSDL_LOCATION, KSBClientProperties.QNAME_POSTAL_SERVICE,
+		  		KSBClientProperties.QNAME_POSTAL_SERVICE_PORT, PostalCodeService.class);
+  }
+  
+  public StateService getStateService() {
+	  return getService(KSBClientProperties.STATE_WSDL_LOCATION, KSBClientProperties.QNAME_STATE_SERVICE,
+		  		KSBClientProperties.QNAME_STATE_SERVICE_PORT, StateService.class);
   }
   
   private <T> T getService(String wsdlocation, QName tService, QName tServicePort, Class<T> serviceEndpointInterface) {

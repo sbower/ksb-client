@@ -27,4 +27,16 @@ public class KSBClientProperties {
   public static final String WORKFLOW_ACTION_WSDL_LOCATION = "/remoting/soap/kew/v2_0/workflowDocumentActionsService?wsdl";
   public static final QName QNAME_WORKFLOW_ACTION_SERVICE = new QName("http://rice.kuali.org/kew/v2_0", "workflowDocumentActionsService");
   public static final QName QNAME_WORKFLOW_ACTION_SERVICE_PORT = new QName("http://rice.kuali.org/kew/v2_0", "workflowDocumentActionsServicePort");
+  
+  public static final String COUNTRY_WSDL_LOCATION = "/remoting/soap/location/v2_0/countryService?wsdl";
+  public static final QName QNAME_COUNTRY_SERVICE = new QName("http://rice.kuali.org/location/v2_0", "countryService");
+  public static final QName QNAME_COUNTRY_SERVICE_PORT = new QName("http://rice.kuali.org/location/v2_0", "CountryServicePort");
+  
+  public static final String POSTAL_WSDL_LOCATION = "/remoting/soap/location/v2_0/postalCodeService?wsdl";
+  public static final QName QNAME_POSTAL_SERVICE = new QName("http://rice.kuali.org/location/v2_0", "postalCodeService");
+  public static final QName QNAME_POSTAL_SERVICE_PORT = new QName("http://rice.kuali.org/location/v2_0", "PostalCodeServicePort");
+  
+  public static final String STATE_WSDL_LOCATION = "/remoting/soap/location/v2_0/stateService?wsdl";
+  public static final QName QNAME_STATE_SERVICE = new QName("http://rice.kuali.org/location/v2_0", "stateService");
+  public static final QName QNAME_STATE_SERVICE_PORT = new QName("http://rice.kuali.org/location/v2_0", "StateServicePort");
 }
