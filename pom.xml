@@ -7,10 +7,16 @@
   <version>1.0-SNAPSHOT</version>
   <name>ksb-client</name>
   
-   <properties>
+  <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   
+  <scm>
+	<url>https://github.com/CU-CommunityApps/ksb-client</url>
+	<connection>scm:git:git@github.com:CU-CommunityApps/ksb-client.git</connection>
+	<developerConnection>scm:git:git@github.com:CU-CommunityApps/ksb-client.git</developerConnection>
+  </scm>
+	
   <build>
 	<plugins>
 	  <plugin>
