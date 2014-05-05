@@ -3,7 +3,7 @@
   <groupId>edu.cornell.ksdbclient</groupId>
   <artifactId>ksb-client</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.1</version>
+  <version>1.0.2-SNAPSHOT</version>
   <name>ksb-client</name>
   
   <properties>
