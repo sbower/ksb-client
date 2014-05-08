@@ -19,8 +19,10 @@ import org.kuali.rice.kim.v2_0.GroupService;
 import org.kuali.rice.kim.v2_0.IdentityService;
 import org.kuali.rice.kim.v2_0.RoleService;
 import org.kuali.rice.location.v2_0.CountryService;
+import org.kuali.rice.location.v2_0.PostalCodeQueryResultsType;
 import org.kuali.rice.location.v2_0.PostalCodeService;
 import org.kuali.rice.location.v2_0.PostalCodeType;
+import org.kuali.rice.location.v2_0.StateQueryResultsType;
 import org.kuali.rice.location.v2_0.StateService;
 
 public class KSBServiceClientTest {
@@ -88,14 +90,26 @@ public class KSBServiceClientTest {
 	
 	   PostalCodeType pt = svc.getPostalCode("US", "14845");
 	   assertEquals("HORSEHEADS", pt.getCityName());
+     
    }
    
    @Test
    public void stateServiceTest() throws Exception {
-	   KSBServiceClient client = new KSBServiceClient();  
+	   KSBServiceClient client = new KSBServiceClient(); 
 	   StateService svc = client.getStateService();
 	
 	   assertEquals("NEW YORK", svc.getState("US", "NY").getName());
+	   
+	   EqualType et = new EqualType();
+	   et.setPropertyPath("name");
+	   et.setStringValue("NEW YORK");
+	   
+	   QueryByCriteriaType qbct = new QueryByCriteriaType();
+	   qbct.setEqual(et);
+	   qbct.setCountFlag("NONE");
+	   
+	   StateQueryResultsType sqrt = svc.findStates(qbct);
+	   assertEquals("NY", sqrt.getResults().getState().get(0).getCode());
 	   
    }
    
