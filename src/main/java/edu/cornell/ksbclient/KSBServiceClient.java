@@ -4,21 +4,25 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
+
+import javax.xml.namespace.QName;
 
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.endpoint.Endpoint;
 import org.apache.cxf.frontend.ClientProxy;
 import org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor;
 import org.apache.ws.security.handler.WSHandlerConstants;
-import org.kuali.rice.core.v2_0.ParameterRepositoryService;
 import org.kuali.rice.core.v2_0.ParameterService;
+import org.kuali.rice.kew.v2_0.WorkflowDocumentActionsService;
 import org.kuali.rice.kim.v2_0.IdentityService;
-import org.kuali.rice.kim.v2_0.IdentityService_Service;
 import org.kuali.rice.kim.v2_0.RoleService;
-import org.kuali.rice.kim.v2_0.RoleService_Service;
+import org.kuali.rice.location.v2_0.CountryService;
+import org.kuali.rice.location.v2_0.PostalCodeService;
+import org.kuali.rice.location.v2_0.StateService;
 
 public class KSBServiceClient {
   
@@ -49,52 +53,56 @@ public class KSBServiceClient {
     this(KSBClientProperties.DEFAULT_SIGNATURE_PROPERTIES_FILE, KSBClientProperties.DEFAULT_SIGNATURE_USER, KSBClientProperties.DEFAULT_BASE_URL);
   }
 	
-  // Need to clean up the services, start combining into a generic service
   public ParameterService getParameterService () {
-    
-		ParameterRepositoryService svc;
+	  return getService(KSBClientProperties.PARAMETER_WSDL_LOCATION, KSBClientProperties.QNAME_PARM_SERVICE,
+		  		KSBClientProperties.QNAME_PARM_SERVICE_PORT, ParameterService.class);
 		
-    try {
-      svc = new ParameterRepositoryService(baseURL);
-      ParameterService parameterService = svc.getParameterServicePort();
-      
-      setWSS4JOutInterceptor(parameterService);
-      return parameterService;
-    } catch (MalformedURLException e) {
-      System.err.println("Invalid URL: " + baseURL);
-      return null;
-    }
-		
-	}
+  }
   
   public RoleService getRoleService() {
-    RoleService_Service svc;
-    
-    try {
-      svc = new RoleService_Service(baseURL);
-      RoleService rolseService = svc.getRoleServicePort();
-      
-      setWSS4JOutInterceptor(rolseService);
-      return rolseService;
-    } catch (MalformedURLException e) {
-      System.err.println("Invalid URL: " + baseURL);
-      return null;
-    }
+	  return getService(KSBClientProperties.ROLE_WSDL_LOCATION, KSBClientProperties.QNAME_ROLE_SERVICE,
+				  		KSBClientProperties.QNAME_ROLE_SERVICE_PORT, RoleService.class);
+
   }
 
   public IdentityService getIdentityService() {
-    IdentityService_Service svc;
-    
-    try {
-      svc = new IdentityService_Service(baseURL);
-      IdentityService rolseService = svc.getIdentityServicePort();
-      
-      setWSS4JOutInterceptor(rolseService);
-      return rolseService;
-    } catch (MalformedURLException e) {
-      System.err.println("Invalid URL: " + baseURL);
-      return null;
-    }
+	  return getService(KSBClientProperties.IDENTITY_WSDL_LOCATION, KSBClientProperties.QNAME_IDENTITY_SERVICE,
+		  		KSBClientProperties.QNAME_IDENTITY_SERVICE_PORT, IdentityService.class);
+  }
+  
+  public WorkflowDocumentActionsService getWorkflowDocumentActionsService() {
+	  return getService(KSBClientProperties.WORKFLOW_ACTION_WSDL_LOCATION, KSBClientProperties.QNAME_WORKFLOW_ACTION_SERVICE,
+		  		KSBClientProperties.QNAME_WORKFLOW_ACTION_SERVICE_PORT, WorkflowDocumentActionsService.class);
+  }
+  
+  public CountryService getCountryService() {
+	  return getService(KSBClientProperties.COUNTRY_WSDL_LOCATION, KSBClientProperties.QNAME_COUNTRY_SERVICE,
+		  		KSBClientProperties.QNAME_COUNTRY_SERVICE_PORT, CountryService.class);
+  }
+  
+  public PostalCodeService getPostalCodeService() {
+	  return getService(KSBClientProperties.POSTAL_WSDL_LOCATION, KSBClientProperties.QNAME_POSTAL_SERVICE,
+		  		KSBClientProperties.QNAME_POSTAL_SERVICE_PORT, PostalCodeService.class);
+  }
+  
+  public StateService getStateService() {
+	  return getService(KSBClientProperties.STATE_WSDL_LOCATION, KSBClientProperties.QNAME_STATE_SERVICE,
+		  		KSBClientProperties.QNAME_STATE_SERVICE_PORT, StateService.class);
+  }
+  
+  private <T> T getService(String wsdlocation, QName tService, QName tServicePort, Class<T> serviceEndpointInterface) {
+	  GenericServiceImpl svc;
+	  try {
+		  svc = new GenericServiceImpl(new URL(baseURL + wsdlocation), tService);
+		  T service =  (T) svc.getPort(tServicePort, serviceEndpointInterface);
+		  
+		  setWSS4JOutInterceptor(service);
+		  return service; 
+	  } catch (MalformedURLException e) {
+	      System.err.println("Invalid URL: " + baseURL);
+	      return null;
+	}
+
   }
   
   public static String getProperty(String key) {
