@@ -18,6 +18,8 @@ import org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor;
 import org.apache.ws.security.handler.WSHandlerConstants;
 import org.kuali.rice.core.v2_0.ParameterService;
 import org.kuali.rice.kew.v2_0.WorkflowDocumentActionsService;
+import org.kuali.rice.kew.v2_0.WorkflowDocumentService;
+import org.kuali.rice.kim.v2_0.GroupService;
 import org.kuali.rice.kim.v2_0.IdentityService;
 import org.kuali.rice.kim.v2_0.RoleService;
 import org.kuali.rice.location.v2_0.CountryService;
@@ -28,10 +30,10 @@ public class KSBServiceClient {
   
 	private static Properties properties = new Properties();
 	
-  private Map<String, Object> outProps = new HashMap<String, Object>();
-  private String baseURL = "";
-  private String signUser = "";
-  private String signPropsFile = "";
+	private Map<String, Object> outProps = new HashMap<String, Object>();
+	private String baseURL = "";
+	private String signUser = "";
+	private String signPropsFile = "";
   
 	public KSBServiceClient(String signPropsFile, String signUser, String baseURL) {
 	  this.baseURL = baseURL;
@@ -56,13 +58,11 @@ public class KSBServiceClient {
   public ParameterService getParameterService () {
 	  return getService(KSBClientProperties.PARAMETER_WSDL_LOCATION, KSBClientProperties.QNAME_PARM_SERVICE,
 		  		KSBClientProperties.QNAME_PARM_SERVICE_PORT, ParameterService.class);
-		
   }
   
   public RoleService getRoleService() {
 	  return getService(KSBClientProperties.ROLE_WSDL_LOCATION, KSBClientProperties.QNAME_ROLE_SERVICE,
 				  		KSBClientProperties.QNAME_ROLE_SERVICE_PORT, RoleService.class);
-
   }
 
   public IdentityService getIdentityService() {
@@ -70,9 +70,19 @@ public class KSBServiceClient {
 		  		KSBClientProperties.QNAME_IDENTITY_SERVICE_PORT, IdentityService.class);
   }
   
+  public GroupService getGroupService() {
+	  return getService(KSBClientProperties.GROUP_WSDL_LOCATION, KSBClientProperties.QNAME_GROUP_SERVICE,
+		  		KSBClientProperties.QNAME_GROUP_SERVICE_PORT, GroupService.class);
+  }
+  
   public WorkflowDocumentActionsService getWorkflowDocumentActionsService() {
 	  return getService(KSBClientProperties.WORKFLOW_ACTION_WSDL_LOCATION, KSBClientProperties.QNAME_WORKFLOW_ACTION_SERVICE,
 		  		KSBClientProperties.QNAME_WORKFLOW_ACTION_SERVICE_PORT, WorkflowDocumentActionsService.class);
+  }
+  
+  public WorkflowDocumentService getWorkflowDocumentService() {
+	  return getService(KSBClientProperties.WORKFLOW_DOCUMENT_WSDL_LOCATION, KSBClientProperties.QNAME_WORKFLOW_DOCUMENT_SERVICE,
+		  		KSBClientProperties.QNAME_WORKFLOW_DOCUMENT_SERVICE_PORT, WorkflowDocumentService.class);
   }
   
   public CountryService getCountryService() {

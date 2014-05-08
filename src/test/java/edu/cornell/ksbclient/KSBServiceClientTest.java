@@ -7,11 +7,15 @@ import java.util.List;
 
 import org.junit.Ignore;
 import org.junit.Test;
+import org.kuali.rice.core.v2_0.EqualType;
 import org.kuali.rice.core.v2_0.ParameterKeyType;
 import org.kuali.rice.core.v2_0.ParameterService;
+import org.kuali.rice.core.v2_0.QueryByCriteriaType;
 import org.kuali.rice.core.v2_0.StringMapEntryListType;
 import org.kuali.rice.kew.v2_0.WorkflowDocumentActionsService;
+import org.kuali.rice.kew.v2_0.WorkflowDocumentService;
 import org.kuali.rice.kim.v2_0.EntityType;
+import org.kuali.rice.kim.v2_0.GroupService;
 import org.kuali.rice.kim.v2_0.IdentityService;
 import org.kuali.rice.kim.v2_0.RoleService;
 import org.kuali.rice.location.v2_0.CountryService;
@@ -92,5 +96,24 @@ public class KSBServiceClientTest {
 	   StateService svc = client.getStateService();
 	
 	   assertEquals("NEW YORK", svc.getState("US", "NY").getName());
+	   
+   }
+   
+   @Test
+   public void groupServiceTest() throws Exception {
+	   KSBServiceClient client = new KSBServiceClient();  
+	   GroupService svc = client.getGroupService();
+	
+	   assertEquals("Kuali Administrators", svc.getGroup("2008").getName());
+	   
+   }
+   
+   @Test @Ignore
+   public void workflowDocumentServiceTest() throws Exception {
+	   KSBServiceClient client = new KSBServiceClient();  
+	   WorkflowDocumentService svc = client.getWorkflowDocumentService();
+	
+	   assertEquals("F", svc.getDocument("3063").getStatus());
+	   
    }
 }
