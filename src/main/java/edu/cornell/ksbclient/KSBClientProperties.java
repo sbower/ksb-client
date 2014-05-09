@@ -24,9 +24,17 @@ public class KSBClientProperties {
   public static final QName QNAME_IDENTITY_SERVICE = new QName("http://rice.kuali.org/kim/v2_0", "identityService");
   public static final QName QNAME_IDENTITY_SERVICE_PORT = new QName("http://rice.kuali.org/kim/v2_0", "identityServicePort");
   
+  public static final String GROUP_WSDL_LOCATION = "/remoting/soap/kim/v2_0/groupService?wsdl";
+  public static final QName QNAME_GROUP_SERVICE = new QName("http://rice.kuali.org/kim/v2_0", "groupService");
+  public static final QName QNAME_GROUP_SERVICE_PORT = new QName("http://rice.kuali.org/kim/v2_0", "groupServicePort");
+  
   public static final String WORKFLOW_ACTION_WSDL_LOCATION = "/remoting/soap/kew/v2_0/workflowDocumentActionsService?wsdl";
   public static final QName QNAME_WORKFLOW_ACTION_SERVICE = new QName("http://rice.kuali.org/kew/v2_0", "workflowDocumentActionsService");
   public static final QName QNAME_WORKFLOW_ACTION_SERVICE_PORT = new QName("http://rice.kuali.org/kew/v2_0", "workflowDocumentActionsServicePort");
+
+  public static final String WORKFLOW_DOCUMENT_WSDL_LOCATION = "/remoting/soap/kew/v2_0/workflowDocumentService?wsdl";
+  public static final QName QNAME_WORKFLOW_DOCUMENT_SERVICE = new QName("http://rice.kuali.org/kew/v2_0", "workflowDocumentService");
+  public static final QName QNAME_WORKFLOW_DOCUMENT_SERVICE_PORT = new QName("http://rice.kuali.org/kew/v2_0", "workflowDocumentServicePort");
   
   public static final String COUNTRY_WSDL_LOCATION = "/remoting/soap/location/v2_0/countryService?wsdl";
   public static final QName QNAME_COUNTRY_SERVICE = new QName("http://rice.kuali.org/location/v2_0", "countryService");
