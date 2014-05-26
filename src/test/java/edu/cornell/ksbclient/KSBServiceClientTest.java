@@ -19,7 +19,6 @@ import org.kuali.rice.kim.v2_0.GroupService;
 import org.kuali.rice.kim.v2_0.IdentityService;
 import org.kuali.rice.kim.v2_0.RoleService;
 import org.kuali.rice.location.v2_0.CountryService;
-import org.kuali.rice.location.v2_0.PostalCodeQueryResultsType;
 import org.kuali.rice.location.v2_0.PostalCodeService;
 import org.kuali.rice.location.v2_0.PostalCodeType;
 import org.kuali.rice.location.v2_0.StateQueryResultsType;
@@ -40,7 +39,6 @@ public class KSBServiceClientTest {
 		pk.setName("ACTION_LIST_DOCUMENT_POPUP_IND");
 		
 		String value = svc.getParameterValueAsString(pk);
-
 		
 		assertEquals( "Y", value );
 

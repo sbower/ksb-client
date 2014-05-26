@@ -17,7 +17,7 @@ client = KSBServiceClient.new
 svc = client.getPostalCodeService()
 
 et = EqualType.new 
-et.setPropertyPath("stateCode")
+et.setPropertyPath("state.code")
 et.setStringValue("NY")
 
 qbct =  QueryByCriteriaType.new
