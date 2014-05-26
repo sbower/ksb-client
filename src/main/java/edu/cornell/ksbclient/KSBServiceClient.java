@@ -16,6 +16,8 @@ import org.apache.cxf.endpoint.Endpoint;
 import org.apache.cxf.frontend.ClientProxy;
 import org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor;
 import org.apache.ws.security.handler.WSHandlerConstants;
+import org.kuali.rice.core.v2_0.ComponentService;
+import org.kuali.rice.core.v2_0.NamespaceService;
 import org.kuali.rice.core.v2_0.ParameterService;
 import org.kuali.rice.kew.v2_0.WorkflowDocumentActionsService;
 import org.kuali.rice.kew.v2_0.WorkflowDocumentService;
@@ -98,6 +100,17 @@ public class KSBServiceClient {
   public StateService getStateService() {
 	  return getService(KSBClientProperties.STATE_WSDL_LOCATION, KSBClientProperties.QNAME_STATE_SERVICE,
 		  		KSBClientProperties.QNAME_STATE_SERVICE_PORT, StateService.class);
+  }
+  
+  
+  public ComponentService getComponentService() {
+    return getService(KSBClientProperties.COMPONENT_WSDL_LOCATION, KSBClientProperties.QNAME_COMPONENT_SERVICE,
+          KSBClientProperties.QNAME_COMPONENT_SERVICE_PORT, ComponentService.class);
+  }
+  
+  public NamespaceService getNamespaceService() {
+    return getService(KSBClientProperties.NAMESPACE_WSDL_LOCATION, KSBClientProperties.QNAME_NAMESPACE_SERVICE,
+          KSBClientProperties.QNAME_NAMESPACE_SERVICE_PORT, NamespaceService.class);
   }
   
   private <T> T getService(String wsdlocation, QName tService, QName tServicePort, Class<T> serviceEndpointInterface) {

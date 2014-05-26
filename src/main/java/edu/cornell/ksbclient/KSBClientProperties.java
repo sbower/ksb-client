@@ -47,4 +47,12 @@ public class KSBClientProperties {
   public static final String STATE_WSDL_LOCATION = "/remoting/soap/location/v2_0/stateService?wsdl";
   public static final QName QNAME_STATE_SERVICE = new QName("http://rice.kuali.org/location/v2_0", "stateService");
   public static final QName QNAME_STATE_SERVICE_PORT = new QName("http://rice.kuali.org/location/v2_0", "StateServicePort");
+  
+  public static final String COMPONENT_WSDL_LOCATION = "/remoting/soap/core/v2_0/componentService?wsdl";
+  public static final QName QNAME_COMPONENT_SERVICE = new QName("http://rice.kuali.org/core/v2_0", "componentService");
+  public static final QName QNAME_COMPONENT_SERVICE_PORT = new QName("http://rice.kuali.org/core/v2_0", "componentServicePort");
+  
+  public static final String NAMESPACE_WSDL_LOCATION = "/remoting/soap/core/v2_0/namespaceService?wsdl";
+  public static final QName QNAME_NAMESPACE_SERVICE = new QName("http://rice.kuali.org/core/v2_0", "namespaceService");
+  public static final QName QNAME_NAMESPACE_SERVICE_PORT = new QName("http://rice.kuali.org/core/v2_0", "namespaceServicePort");
 }

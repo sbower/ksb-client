@@ -7,7 +7,9 @@ import java.util.List;
 
 import org.junit.Ignore;
 import org.junit.Test;
+import org.kuali.rice.core.v2_0.ComponentService;
 import org.kuali.rice.core.v2_0.EqualType;
+import org.kuali.rice.core.v2_0.NamespaceService;
 import org.kuali.rice.core.v2_0.ParameterKeyType;
 import org.kuali.rice.core.v2_0.ParameterService;
 import org.kuali.rice.core.v2_0.QueryByCriteriaType;
@@ -19,7 +21,6 @@ import org.kuali.rice.kim.v2_0.GroupService;
 import org.kuali.rice.kim.v2_0.IdentityService;
 import org.kuali.rice.kim.v2_0.RoleService;
 import org.kuali.rice.location.v2_0.CountryService;
-import org.kuali.rice.location.v2_0.PostalCodeQueryResultsType;
 import org.kuali.rice.location.v2_0.PostalCodeService;
 import org.kuali.rice.location.v2_0.PostalCodeType;
 import org.kuali.rice.location.v2_0.StateQueryResultsType;
@@ -40,7 +41,6 @@ public class KSBServiceClientTest {
 		pk.setName("ACTION_LIST_DOCUMENT_POPUP_IND");
 		
 		String value = svc.getParameterValueAsString(pk);
-
 		
 		assertEquals( "Y", value );
 
@@ -129,5 +129,23 @@ public class KSBServiceClientTest {
 	
 	   assertEquals("F", svc.getDocument("3063").getStatus());
 	   
+   }
+   
+   @Test
+   public void componentServiceTest() throws Exception {
+     KSBServiceClient client = new KSBServiceClient();  
+     ComponentService svc = client.getComponentService();
+  
+     assertEquals("Action List", svc.getComponentByCode("KR-WKFLW", "ActionList").getName());
+     
+   }
+   
+   @Test
+   public void namespaceServiceTest() throws Exception {
+     KSBServiceClient client = new KSBServiceClient();  
+     NamespaceService svc = client.getNamespaceService();
+  
+     assertEquals("Workflow", svc.getNamespace("KR-WKFLW").getName());
+     
    }
 }
