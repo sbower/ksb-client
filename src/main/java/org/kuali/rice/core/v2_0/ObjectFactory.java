@@ -24,18 +24,12 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetDerivedComponentSet_QNAME = new QName("http://rice.kuali.org/core/v2_0", "getDerivedComponentSet");
-    private final static QName _GetActiveComponentsByNamespaceCode_QNAME = new QName("http://rice.kuali.org/core/v2_0", "getActiveComponentsByNamespaceCode");
-    private final static QName _GetComponentByCode_QNAME = new QName("http://rice.kuali.org/core/v2_0", "getComponentByCode");
-    private final static QName _GetAllComponentsByNamespaceCode_QNAME = new QName("http://rice.kuali.org/core/v2_0", "getAllComponentsByNamespaceCode");
-    private final static QName _GetAllComponentsByNamespaceCodeResponse_QNAME = new QName("http://rice.kuali.org/core/v2_0", "getAllComponentsByNamespaceCodeResponse");
-    private final static QName _GetActiveComponentsByNamespaceCodeResponse_QNAME = new QName("http://rice.kuali.org/core/v2_0", "getActiveComponentsByNamespaceCodeResponse");
-    private final static QName _GetComponentByCodeResponse_QNAME = new QName("http://rice.kuali.org/core/v2_0", "getComponentByCodeResponse");
-    private final static QName _Component_QNAME = new QName("http://rice.kuali.org/core/v2_0", "component");
-    private final static QName _PublishDerivedComponentsResponse_QNAME = new QName("http://rice.kuali.org/core/v2_0", "publishDerivedComponentsResponse");
+    private final static QName _GetNamespaceResponse_QNAME = new QName("http://rice.kuali.org/core/v2_0", "getNamespaceResponse");
     private final static QName _IllegalArgumentFault_QNAME = new QName("http://rice.kuali.org/core/v2_0", "IllegalArgumentFault");
-    private final static QName _GetDerivedComponentSetResponse_QNAME = new QName("http://rice.kuali.org/core/v2_0", "getDerivedComponentSetResponse");
-    private final static QName _PublishDerivedComponents_QNAME = new QName("http://rice.kuali.org/core/v2_0", "publishDerivedComponents");
+    private final static QName _FindAllNamespacesResponse_QNAME = new QName("http://rice.kuali.org/core/v2_0", "findAllNamespacesResponse");
+    private final static QName _Namespace_QNAME = new QName("http://rice.kuali.org/core/v2_0", "namespace");
+    private final static QName _FindAllNamespaces_QNAME = new QName("http://rice.kuali.org/core/v2_0", "findAllNamespaces");
+    private final static QName _GetNamespace_QNAME = new QName("http://rice.kuali.org/core/v2_0", "getNamespace");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.kuali.rice.core.v2_0
@@ -45,75 +39,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetDerivedComponentSetResponse }
+     * Create an instance of {@link FindAllNamespacesResponse }
      * 
      */
-    public GetDerivedComponentSetResponse createGetDerivedComponentSetResponse() {
-        return new GetDerivedComponentSetResponse();
+    public FindAllNamespacesResponse createFindAllNamespacesResponse() {
+        return new FindAllNamespacesResponse();
     }
 
     /**
-     * Create an instance of {@link GetAllComponentsByNamespaceCodeResponse }
+     * Create an instance of {@link GetNamespaceResponse }
      * 
      */
-    public GetAllComponentsByNamespaceCodeResponse createGetAllComponentsByNamespaceCodeResponse() {
-        return new GetAllComponentsByNamespaceCodeResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetActiveComponentsByNamespaceCodeResponse }
-     * 
-     */
-    public GetActiveComponentsByNamespaceCodeResponse createGetActiveComponentsByNamespaceCodeResponse() {
-        return new GetActiveComponentsByNamespaceCodeResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetComponentByCode }
-     * 
-     */
-    public GetComponentByCode createGetComponentByCode() {
-        return new GetComponentByCode();
-    }
-
-    /**
-     * Create an instance of {@link GetActiveComponentsByNamespaceCode }
-     * 
-     */
-    public GetActiveComponentsByNamespaceCode createGetActiveComponentsByNamespaceCode() {
-        return new GetActiveComponentsByNamespaceCode();
-    }
-
-    /**
-     * Create an instance of {@link GetDerivedComponentSet }
-     * 
-     */
-    public GetDerivedComponentSet createGetDerivedComponentSet() {
-        return new GetDerivedComponentSet();
-    }
-
-    /**
-     * Create an instance of {@link GetComponentByCodeResponse }
-     * 
-     */
-    public GetComponentByCodeResponse createGetComponentByCodeResponse() {
-        return new GetComponentByCodeResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetAllComponentsByNamespaceCode }
-     * 
-     */
-    public GetAllComponentsByNamespaceCode createGetAllComponentsByNamespaceCode() {
-        return new GetAllComponentsByNamespaceCode();
-    }
-
-    /**
-     * Create an instance of {@link ComponentType }
-     * 
-     */
-    public ComponentType createComponentType() {
-        return new ComponentType();
+    public GetNamespaceResponse createGetNamespaceResponse() {
+        return new GetNamespaceResponse();
     }
 
     /**
@@ -125,124 +63,44 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PublishDerivedComponentsResponse }
+     * Create an instance of {@link GetNamespace }
      * 
      */
-    public PublishDerivedComponentsResponse createPublishDerivedComponentsResponse() {
-        return new PublishDerivedComponentsResponse();
+    public GetNamespace createGetNamespace() {
+        return new GetNamespace();
     }
 
     /**
-     * Create an instance of {@link PublishDerivedComponents }
+     * Create an instance of {@link FindAllNamespaces }
      * 
      */
-    public PublishDerivedComponents createPublishDerivedComponents() {
-        return new PublishDerivedComponents();
+    public FindAllNamespaces createFindAllNamespaces() {
+        return new FindAllNamespaces();
     }
 
     /**
-     * Create an instance of {@link GetDerivedComponentSetResponse.Components }
+     * Create an instance of {@link NamespaceType }
      * 
      */
-    public GetDerivedComponentSetResponse.Components createGetDerivedComponentSetResponseComponents() {
-        return new GetDerivedComponentSetResponse.Components();
+    public NamespaceType createNamespaceType() {
+        return new NamespaceType();
     }
 
     /**
-     * Create an instance of {@link GetAllComponentsByNamespaceCodeResponse.Components }
+     * Create an instance of {@link FindAllNamespacesResponse.Namespaces }
      * 
      */
-    public GetAllComponentsByNamespaceCodeResponse.Components createGetAllComponentsByNamespaceCodeResponseComponents() {
-        return new GetAllComponentsByNamespaceCodeResponse.Components();
+    public FindAllNamespacesResponse.Namespaces createFindAllNamespacesResponseNamespaces() {
+        return new FindAllNamespacesResponse.Namespaces();
     }
 
     /**
-     * Create an instance of {@link GetActiveComponentsByNamespaceCodeResponse.Components }
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetNamespaceResponse }{@code >}}
      * 
      */
-    public GetActiveComponentsByNamespaceCodeResponse.Components createGetActiveComponentsByNamespaceCodeResponseComponents() {
-        return new GetActiveComponentsByNamespaceCodeResponse.Components();
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetDerivedComponentSet }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://rice.kuali.org/core/v2_0", name = "getDerivedComponentSet")
-    public JAXBElement<GetDerivedComponentSet> createGetDerivedComponentSet(GetDerivedComponentSet value) {
-        return new JAXBElement<GetDerivedComponentSet>(_GetDerivedComponentSet_QNAME, GetDerivedComponentSet.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetActiveComponentsByNamespaceCode }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://rice.kuali.org/core/v2_0", name = "getActiveComponentsByNamespaceCode")
-    public JAXBElement<GetActiveComponentsByNamespaceCode> createGetActiveComponentsByNamespaceCode(GetActiveComponentsByNamespaceCode value) {
-        return new JAXBElement<GetActiveComponentsByNamespaceCode>(_GetActiveComponentsByNamespaceCode_QNAME, GetActiveComponentsByNamespaceCode.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetComponentByCode }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://rice.kuali.org/core/v2_0", name = "getComponentByCode")
-    public JAXBElement<GetComponentByCode> createGetComponentByCode(GetComponentByCode value) {
-        return new JAXBElement<GetComponentByCode>(_GetComponentByCode_QNAME, GetComponentByCode.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllComponentsByNamespaceCode }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://rice.kuali.org/core/v2_0", name = "getAllComponentsByNamespaceCode")
-    public JAXBElement<GetAllComponentsByNamespaceCode> createGetAllComponentsByNamespaceCode(GetAllComponentsByNamespaceCode value) {
-        return new JAXBElement<GetAllComponentsByNamespaceCode>(_GetAllComponentsByNamespaceCode_QNAME, GetAllComponentsByNamespaceCode.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllComponentsByNamespaceCodeResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://rice.kuali.org/core/v2_0", name = "getAllComponentsByNamespaceCodeResponse")
-    public JAXBElement<GetAllComponentsByNamespaceCodeResponse> createGetAllComponentsByNamespaceCodeResponse(GetAllComponentsByNamespaceCodeResponse value) {
-        return new JAXBElement<GetAllComponentsByNamespaceCodeResponse>(_GetAllComponentsByNamespaceCodeResponse_QNAME, GetAllComponentsByNamespaceCodeResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetActiveComponentsByNamespaceCodeResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://rice.kuali.org/core/v2_0", name = "getActiveComponentsByNamespaceCodeResponse")
-    public JAXBElement<GetActiveComponentsByNamespaceCodeResponse> createGetActiveComponentsByNamespaceCodeResponse(GetActiveComponentsByNamespaceCodeResponse value) {
-        return new JAXBElement<GetActiveComponentsByNamespaceCodeResponse>(_GetActiveComponentsByNamespaceCodeResponse_QNAME, GetActiveComponentsByNamespaceCodeResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetComponentByCodeResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://rice.kuali.org/core/v2_0", name = "getComponentByCodeResponse")
-    public JAXBElement<GetComponentByCodeResponse> createGetComponentByCodeResponse(GetComponentByCodeResponse value) {
-        return new JAXBElement<GetComponentByCodeResponse>(_GetComponentByCodeResponse_QNAME, GetComponentByCodeResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ComponentType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://rice.kuali.org/core/v2_0", name = "component")
-    public JAXBElement<ComponentType> createComponent(ComponentType value) {
-        return new JAXBElement<ComponentType>(_Component_QNAME, ComponentType.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link PublishDerivedComponentsResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://rice.kuali.org/core/v2_0", name = "publishDerivedComponentsResponse")
-    public JAXBElement<PublishDerivedComponentsResponse> createPublishDerivedComponentsResponse(PublishDerivedComponentsResponse value) {
-        return new JAXBElement<PublishDerivedComponentsResponse>(_PublishDerivedComponentsResponse_QNAME, PublishDerivedComponentsResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://rice.kuali.org/core/v2_0", name = "getNamespaceResponse")
+    public JAXBElement<GetNamespaceResponse> createGetNamespaceResponse(GetNamespaceResponse value) {
+        return new JAXBElement<GetNamespaceResponse>(_GetNamespaceResponse_QNAME, GetNamespaceResponse.class, null, value);
     }
 
     /**
@@ -255,21 +113,39 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetDerivedComponentSetResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindAllNamespacesResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://rice.kuali.org/core/v2_0", name = "getDerivedComponentSetResponse")
-    public JAXBElement<GetDerivedComponentSetResponse> createGetDerivedComponentSetResponse(GetDerivedComponentSetResponse value) {
-        return new JAXBElement<GetDerivedComponentSetResponse>(_GetDerivedComponentSetResponse_QNAME, GetDerivedComponentSetResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://rice.kuali.org/core/v2_0", name = "findAllNamespacesResponse")
+    public JAXBElement<FindAllNamespacesResponse> createFindAllNamespacesResponse(FindAllNamespacesResponse value) {
+        return new JAXBElement<FindAllNamespacesResponse>(_FindAllNamespacesResponse_QNAME, FindAllNamespacesResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link PublishDerivedComponents }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link NamespaceType }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://rice.kuali.org/core/v2_0", name = "publishDerivedComponents")
-    public JAXBElement<PublishDerivedComponents> createPublishDerivedComponents(PublishDerivedComponents value) {
-        return new JAXBElement<PublishDerivedComponents>(_PublishDerivedComponents_QNAME, PublishDerivedComponents.class, null, value);
+    @XmlElementDecl(namespace = "http://rice.kuali.org/core/v2_0", name = "namespace")
+    public JAXBElement<NamespaceType> createNamespace(NamespaceType value) {
+        return new JAXBElement<NamespaceType>(_Namespace_QNAME, NamespaceType.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindAllNamespaces }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://rice.kuali.org/core/v2_0", name = "findAllNamespaces")
+    public JAXBElement<FindAllNamespaces> createFindAllNamespaces(FindAllNamespaces value) {
+        return new JAXBElement<FindAllNamespaces>(_FindAllNamespaces_QNAME, FindAllNamespaces.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetNamespace }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://rice.kuali.org/core/v2_0", name = "getNamespace")
+    public JAXBElement<GetNamespace> createGetNamespace(GetNamespace value) {
+        return new JAXBElement<GetNamespace>(_GetNamespace_QNAME, GetNamespace.class, null, value);
     }
 
 }

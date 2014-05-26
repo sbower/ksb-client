@@ -7,7 +7,9 @@ import java.util.List;
 
 import org.junit.Ignore;
 import org.junit.Test;
+import org.kuali.rice.core.v2_0.ComponentService;
 import org.kuali.rice.core.v2_0.EqualType;
+import org.kuali.rice.core.v2_0.NamespaceService;
 import org.kuali.rice.core.v2_0.ParameterKeyType;
 import org.kuali.rice.core.v2_0.ParameterService;
 import org.kuali.rice.core.v2_0.QueryByCriteriaType;
@@ -127,5 +129,23 @@ public class KSBServiceClientTest {
 	
 	   assertEquals("F", svc.getDocument("3063").getStatus());
 	   
+   }
+   
+   @Test
+   public void componentServiceTest() throws Exception {
+     KSBServiceClient client = new KSBServiceClient();  
+     ComponentService svc = client.getComponentService();
+  
+     assertEquals("Action List", svc.getComponentByCode("KR-WKFLW", "ActionList").getName());
+     
+   }
+   
+   @Test
+   public void namespaceServiceTest() throws Exception {
+     KSBServiceClient client = new KSBServiceClient();  
+     NamespaceService svc = client.getNamespaceService();
+  
+     assertEquals("Workflow", svc.getNamespace("KR-WKFLW").getName());
+     
    }
 }
