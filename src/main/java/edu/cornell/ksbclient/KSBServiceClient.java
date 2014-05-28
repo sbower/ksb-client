@@ -19,6 +19,7 @@ import org.apache.ws.security.handler.WSHandlerConstants;
 import org.kuali.rice.core.v2_0.ComponentService;
 import org.kuali.rice.core.v2_0.NamespaceService;
 import org.kuali.rice.core.v2_0.ParameterService;
+import org.kuali.rice.ken.v2_0.SendNotificationService;
 import org.kuali.rice.kew.v2_0.WorkflowDocumentActionsService;
 import org.kuali.rice.kew.v2_0.WorkflowDocumentService;
 import org.kuali.rice.kim.v2_0.GroupService;
@@ -111,6 +112,11 @@ public class KSBServiceClient {
   public NamespaceService getNamespaceService() {
     return getService(KSBClientProperties.NAMESPACE_WSDL_LOCATION, KSBClientProperties.QNAME_NAMESPACE_SERVICE,
           KSBClientProperties.QNAME_NAMESPACE_SERVICE_PORT, NamespaceService.class);
+  }
+  
+  public SendNotificationService getSendNotificationService() {
+    return getService(KSBClientProperties.SEND_NOTIFICATION_WSDL_LOCATION, KSBClientProperties.QNAME_SEND_NOTIFICATION_SERVICE,
+          KSBClientProperties.QNAME_SEND_NOTIFICATION_SERVICE_PORT, SendNotificationService.class);
   }
   
   private <T> T getService(String wsdlocation, QName tService, QName tServicePort, Class<T> serviceEndpointInterface) {
