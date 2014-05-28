@@ -55,4 +55,8 @@ public class KSBClientProperties {
   public static final String NAMESPACE_WSDL_LOCATION = "/remoting/soap/core/v2_0/namespaceService?wsdl";
   public static final QName QNAME_NAMESPACE_SERVICE = new QName("http://rice.kuali.org/core/v2_0", "namespaceService");
   public static final QName QNAME_NAMESPACE_SERVICE_PORT = new QName("http://rice.kuali.org/core/v2_0", "namespaceServicePort");
+  
+  public static final String SEND_NOTIFICATION_WSDL_LOCATION = "/remoting/soap/ken/v2_0/sendNotificationService?wsdl";
+  public static final QName QNAME_SEND_NOTIFICATION_SERVICE = new QName("http://rice.kuali.org/ken/v2_0", "sendNotificationService");
+  public static final QName QNAME_SEND_NOTIFICATION_SERVICE_PORT = new QName("http://rice.kuali.org/ken/v2_0", "sendNotificationServicePort"); 
 }
