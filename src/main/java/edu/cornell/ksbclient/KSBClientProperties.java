@@ -59,4 +59,9 @@ public class KSBClientProperties {
   public static final String SEND_NOTIFICATION_WSDL_LOCATION = "/remoting/soap/ken/v2_0/sendNotificationService?wsdl";
   public static final QName QNAME_SEND_NOTIFICATION_SERVICE = new QName("http://rice.kuali.org/ken/v2_0", "sendNotificationService");
   public static final QName QNAME_SEND_NOTIFICATION_SERVICE_PORT = new QName("http://rice.kuali.org/ken/v2_0", "sendNotificationServicePort"); 
+ 
+  public static final String ACTION_QUEUE_WSDL_LOCATION = "/remoting/soap/kew/v2_0/actionInvocationQueue?wsdl";
+  public static final QName QNAME_ACTION_QUEUE_SERVICE = new QName("http://rice.kuali.org/kew/v2_0", "actionInvocationQueue");
+  public static final QName QNAME_ACTION_QUEUE_SERVICE_PORT = new QName("http://rice.kuali.org/kew/v2_0", "actionInvocationQueuePort"); 
+  
 }
