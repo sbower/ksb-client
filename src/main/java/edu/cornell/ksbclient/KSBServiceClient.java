@@ -21,6 +21,7 @@ import org.kuali.rice.core.v2_0.NamespaceService;
 import org.kuali.rice.core.v2_0.ParameterService;
 import org.kuali.rice.ken.v2_0.SendNotificationService;
 import org.kuali.rice.kew.v2_0.ActionInvocationQueue;
+import org.kuali.rice.kew.v2_0.ActionListCustomizationHandlerService;
 import org.kuali.rice.kew.v2_0.WorkflowDocumentActionsService;
 import org.kuali.rice.kew.v2_0.WorkflowDocumentService;
 import org.kuali.rice.kim.v2_0.GroupService;
@@ -123,6 +124,11 @@ public class KSBServiceClient {
   public ActionInvocationQueue getActionInvocationQueue() {
     return getService(KSBClientProperties.ACTION_QUEUE_WSDL_LOCATION, KSBClientProperties.QNAME_ACTION_QUEUE_SERVICE,
           KSBClientProperties.QNAME_ACTION_QUEUE_SERVICE_PORT, ActionInvocationQueue.class);
+  }
+  
+  public ActionListCustomizationHandlerService getActionListCustomizationHandlerService() {
+    return getService(KSBClientProperties.ACTION_LIST_CUSTOM_WSDL_LOCATION, KSBClientProperties.QNAME_ACTION_LIST_CUSTOM_SERVICE,
+          KSBClientProperties.QNAME_ACTION_LIST_CUSTOM_SERVICE_PORT, ActionListCustomizationHandlerService.class);
   }
   
   private <T> T getService(String wsdlocation, QName tService, QName tServicePort, Class<T> serviceEndpointInterface) {
