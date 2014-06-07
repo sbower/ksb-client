@@ -33,7 +33,7 @@ public class StringMapEntryType {
 
     @XmlValue
     protected String value;
-    @XmlAttribute
+    @XmlAttribute(name = "key")
     protected String key;
 
     /**
