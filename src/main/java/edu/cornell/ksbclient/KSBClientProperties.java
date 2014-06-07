@@ -68,4 +68,8 @@ public class KSBClientProperties {
   public static final QName QNAME_ACTION_LIST_CUSTOM_SERVICE = new QName("http://rice.kuali.org/kew/v2_0", "actionListCustomizationHandlerService");
   public static final QName QNAME_ACTION_LIST_CUSTOM_SERVICE_PORT = new QName("http://rice.kuali.org/kew/v2_0", "actionListCustomizationHandlerServicePort"); 
   
+  public static final String ACTION_LIST_WSDL_LOCATION = "/remoting/soap/kew/v2_0/actionListService?wsdl";
+  public static final QName QNAME_ACTION_LIST_SERVICE = new QName("http://rice.kuali.org/kew/v2_0", "actionListService");
+  public static final QName QNAME_ACTION_LIST_SERVICE_PORT = new QName("http://rice.kuali.org/kew/v2_0", "actionListServicePort"); 
+  
 }
