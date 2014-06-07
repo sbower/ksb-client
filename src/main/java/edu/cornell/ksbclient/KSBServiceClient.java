@@ -23,6 +23,7 @@ import org.kuali.rice.ken.v2_0.SendNotificationService;
 import org.kuali.rice.kew.v2_0.ActionInvocationQueue;
 import org.kuali.rice.kew.v2_0.ActionListCustomizationHandlerService;
 import org.kuali.rice.kew.v2_0.ActionListService;
+import org.kuali.rice.kew.v2_0.PermissionTypeService;
 import org.kuali.rice.kew.v2_0.WorkflowDocumentActionsService;
 import org.kuali.rice.kew.v2_0.WorkflowDocumentService;
 import org.kuali.rice.kim.v2_0.GroupService;
@@ -135,6 +136,11 @@ public class KSBServiceClient {
   public ActionListService getActionListService() {
     return getService(KSBClientProperties.ACTION_LIST_WSDL_LOCATION, KSBClientProperties.QNAME_ACTION_LIST_SERVICE,
           KSBClientProperties.QNAME_ACTION_LIST_SERVICE_PORT, ActionListService.class);
+  }
+  
+  public PermissionTypeService getBackdoorRestrictionPermissionTypeService() {
+    return getService(KSBClientProperties.BACKDOOR_PERMISSION_TYPE_WSDL_LOCATION, KSBClientProperties.QNAME_BACKDOOR_PERMISSION_TYPE_SERVICE,
+          KSBClientProperties.QNAME_BACKDOOR_PERMISSION_TYPE_SERVICE_PORT, PermissionTypeService.class);
   }
   
   private <T> T getService(String wsdlocation, QName tService, QName tServicePort, Class<T> serviceEndpointInterface) {
