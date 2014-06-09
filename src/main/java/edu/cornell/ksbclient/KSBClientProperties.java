@@ -75,5 +75,10 @@ public class KSBClientProperties {
   public static final String BACKDOOR_PERMISSION_TYPE_WSDL_LOCATION = "/remoting/soap/kew/v2_0/backdoorRestrictionPermissionTypeService?wsdl";
   public static final QName QNAME_BACKDOOR_PERMISSION_TYPE_SERVICE = new QName("http://rice.kuali.org/kew/v2_0", "backdoorRestrictionPermissionTypeService");
   public static final QName QNAME_BACKDOOR_PERMISSION_TYPE_SERVICE_PORT = new QName("http://rice.kuali.org/kew/v2_0", "permissionTypeServicePort"); 
-  
+
+  public static final String DOCUMENT_ATTRIBUTE_INDEX_WSDL_LOCATION = "/remoting/soap/kew/v2_0/documentAttributeIndexingQueue?wsdl";
+  public static final QName QNAME_DOCUMENT_ATTRIBUTE_INDEX_SERVICE = new QName("http://rice.kuali.org/kew/v2_0", "documentAttributeIndexingQueue");
+  public static final QName QNAME_DOCUMENT_ATTRIBUTE_INDEX_SERVICE_PORT = new QName("http://rice.kuali.org/kew/v2_0", "documentAttributeIndexingQueuePort"); 
+
 }
+
