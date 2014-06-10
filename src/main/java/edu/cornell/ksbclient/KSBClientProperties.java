@@ -79,6 +79,10 @@ public class KSBClientProperties {
   public static final String DOCUMENT_ATTRIBUTE_INDEX_WSDL_LOCATION = "/remoting/soap/kew/v2_0/documentAttributeIndexingQueue?wsdl";
   public static final QName QNAME_DOCUMENT_ATTRIBUTE_INDEX_SERVICE = new QName("http://rice.kuali.org/kew/v2_0", "documentAttributeIndexingQueue");
   public static final QName QNAME_DOCUMENT_ATTRIBUTE_INDEX_SERVICE_PORT = new QName("http://rice.kuali.org/kew/v2_0", "documentAttributeIndexingQueuePort"); 
+  
+  public static final String DOCUMENT_ORCHESTRATION_QUEUE_WSDL_LOCATION = "/remoting/soap/kew/v2_0/documentOrchestrationQueue?wsdl";
+  public static final QName QNAME_DOCUMENT_ORCHESTRATION_QUEUE_SERVICE = new QName("http://rice.kuali.org/kew/v2_0", "documentOrchestrationQueue");
+  public static final QName QNAME_DOCUMENT_ORCHESTRATION_QUEUE_SERVICE_PORT = new QName("http://rice.kuali.org/kew/v2_0", "documentOrchestrationQueuePort"); 
 
 }
 

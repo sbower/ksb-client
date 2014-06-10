@@ -24,6 +24,7 @@ import org.kuali.rice.kew.v2_0.ActionInvocationQueue;
 import org.kuali.rice.kew.v2_0.ActionListCustomizationHandlerService;
 import org.kuali.rice.kew.v2_0.ActionListService;
 import org.kuali.rice.kew.v2_0.DocumentAttributeIndexingQueue;
+import org.kuali.rice.kew.v2_0.DocumentOrchestrationQueue;
 import org.kuali.rice.kew.v2_0.PermissionTypeService;
 import org.kuali.rice.kew.v2_0.WorkflowDocumentActionsService;
 import org.kuali.rice.kew.v2_0.WorkflowDocumentService;
@@ -147,6 +148,11 @@ public class KSBServiceClient {
   public DocumentAttributeIndexingQueue getDocumentAttributeIndexingQueue() {
     return getService(KSBClientProperties.DOCUMENT_ATTRIBUTE_INDEX_WSDL_LOCATION, KSBClientProperties.QNAME_DOCUMENT_ATTRIBUTE_INDEX_SERVICE,
           KSBClientProperties.QNAME_DOCUMENT_ATTRIBUTE_INDEX_SERVICE_PORT, DocumentAttributeIndexingQueue.class);
+  }
+  
+  public DocumentOrchestrationQueue getDocumentOrchestrationQueue() {
+    return getService(KSBClientProperties.DOCUMENT_ORCHESTRATION_QUEUE_WSDL_LOCATION, KSBClientProperties.QNAME_DOCUMENT_ORCHESTRATION_QUEUE_SERVICE,
+          KSBClientProperties.QNAME_DOCUMENT_ORCHESTRATION_QUEUE_SERVICE_PORT, DocumentOrchestrationQueue.class);
   }
   
   private <T> T getService(String wsdlocation, QName tService, QName tServicePort, Class<T> serviceEndpointInterface) {
