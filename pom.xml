@@ -72,4 +72,18 @@
 	    <scope>test</scope>
 	</dependency>
   </dependencies>
+  
+  <distributionManagement>
+    <repository>
+      <id>cornell-internal</id>
+      <url>https://maven.cit.cornell.edu/repository/internal/</url>
+    </repository>
+    <snapshotRepository>
+      <id>cornell-snapshots</id>
+      <name>cornell-snapshots</name>
+      <uniqueVersion>true</uniqueVersion>
+      <url>https://maven.cit.cornell.edu/repository/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+  
 </project>
