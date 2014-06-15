@@ -88,5 +88,9 @@ public class KSBClientProperties {
   public static final QName QNAME_DOCUMENT_PROCESSING_QUEUE_SERVICE = new QName("http://rice.kuali.org/kew/v2_0", "documentProcessingQueue");
   public static final QName QNAME_DOCUMENT_PROCESSING_QUEUE_SERVICE_PORT = new QName("http://rice.kuali.org/kew/v2_0", "documentProcessingQueuePort"); 
 
+  public static final String DOCUMENT_REFRESH_QUEUE_WSDL_LOCATION = "/remoting/soap/kew/v2_0/documentRefreshQueue?wsdl";
+  public static final QName QNAME_DOCUMENT_REFRESH_QUEUE_SERVICE = new QName("http://rice.kuali.org/kew/v2_0", "documentRefreshQueue");
+  public static final QName QNAME_DOCUMENT_REFRESH_QUEUE_SERVICE_PORT = new QName("http://rice.kuali.org/kew/v2_0", "documentRefreshQueuePort"); 
+
 }
 
