@@ -32,6 +32,7 @@ import org.w3c.dom.Element;
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}lessThan"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}lessThanOrEqual"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}like"/>
+ *           &lt;element ref="{http://rice.kuali.org/core/v2_0}likeIgnoreCase"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}notEqual"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}notEqualIgnoreCase"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}notIn"/>
@@ -76,6 +77,7 @@ import org.w3c.dom.Element;
     "lessThan",
     "lessThanOrEqual",
     "like",
+    "likeIgnoreCase",
     "notEqual",
     "notEqualIgnoreCase",
     "notIn",
@@ -102,6 +104,7 @@ public class QueryByCriteriaType {
     protected LessThanType lessThan;
     protected LessThanOrEqualType lessThanOrEqual;
     protected LikeType like;
+    protected LikeIgnoreCaseType likeIgnoreCase;
     protected NotEqualType notEqual;
     protected NotEqualIgnoreCaseType notEqualIgnoreCase;
     protected NotInType notIn;
@@ -357,6 +360,30 @@ public class QueryByCriteriaType {
      */
     public void setLike(LikeType value) {
         this.like = value;
+    }
+
+    /**
+     * Gets the value of the likeIgnoreCase property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link LikeIgnoreCaseType }
+     *     
+     */
+    public LikeIgnoreCaseType getLikeIgnoreCase() {
+        return likeIgnoreCase;
+    }
+
+    /**
+     * Sets the value of the likeIgnoreCase property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link LikeIgnoreCaseType }
+     *     
+     */
+    public void setLikeIgnoreCase(LikeIgnoreCaseType value) {
+        this.likeIgnoreCase = value;
     }
 
     /**

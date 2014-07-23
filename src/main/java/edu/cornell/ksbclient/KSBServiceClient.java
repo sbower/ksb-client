@@ -34,6 +34,7 @@ import org.kuali.rice.kew.v2_0.WorkflowDocumentActionsService;
 import org.kuali.rice.kew.v2_0.WorkflowDocumentService;
 import org.kuali.rice.kim.v2_0.GroupService;
 import org.kuali.rice.kim.v2_0.IdentityService;
+import org.kuali.rice.kim.v2_0.PermissionService;
 import org.kuali.rice.kim.v2_0.RoleService;
 import org.kuali.rice.location.v2_0.CountryService;
 import org.kuali.rice.location.v2_0.PostalCodeService;
@@ -169,9 +170,19 @@ public class KSBServiceClient {
           KSBClientProperties.QNAME_DOCUMENT_REFRESH_QUEUE_SERVICE_PORT, DocumentRefreshQueue.class);
   }
   
+  public NoteService getNoteService() {
+    return getService(KSBClientProperties.NOTE_SERVICE_WSDL_LOCATION, KSBClientProperties.QNAME_NOTE_SERVICE,
+          KSBClientProperties.QNAME_NOTE_SERVICE_PORT, NoteService.class);
+}
+  
   public DocumentTypeService getDocumentTypeService() {
     return getService(KSBClientProperties.DOCUMENT_TYPE_WSDL_LOCATION, KSBClientProperties.QNAME_DOCUMENT_TYPE_SERVICE,
           KSBClientProperties.QNAME_DOCUMENT_TYPE_SERVICE_PORT, DocumentTypeService.class);
+  }
+  
+  public PermissionService getPermissionService() {
+    return getService(KSBClientProperties.QNAME_PERMISSION_SERVICE_WSDL_LOCATION, KSBClientProperties.QNAME_PERMISSION_SERVICE,
+          KSBClientProperties.QNAME_PERMISSION_SERVICE_PORT, PermissionService.class);
   }
   
   private <T> T getService(String wsdlocation, QName tService, QName tServicePort, Class<T> serviceEndpointInterface) {

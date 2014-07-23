@@ -28,7 +28,10 @@ import org.w3c.dom.Element;
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}stringValue"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}dateTimeValue"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}decimalValue"/>
+ *           &lt;element ref="{http://rice.kuali.org/core/v2_0}kualiDecimalValue"/>
+ *           &lt;element ref="{http://rice.kuali.org/core/v2_0}kualiPercentValue"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}integerValue"/>
+ *           &lt;element ref="{http://rice.kuali.org/core/v2_0}booleanValue"/>
  *         &lt;/choice>
  *         &lt;any processContents='skip' namespace='##other' maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
@@ -45,7 +48,10 @@ import org.w3c.dom.Element;
     "stringValue",
     "dateTimeValue",
     "decimalValue",
+    "kualiDecimalValue",
+    "kualiPercentValue",
     "integerValue",
+    "booleanValue",
     "any"
 })
 public class EqualType
@@ -55,10 +61,13 @@ public class EqualType
     protected String stringValue;
     protected XMLGregorianCalendar dateTimeValue;
     protected BigDecimal decimalValue;
+    protected BigDecimal kualiDecimalValue;
+    protected BigDecimal kualiPercentValue;
     protected BigInteger integerValue;
+    protected Boolean booleanValue;
     @XmlAnyElement
     protected List<Element> any;
-    @XmlAttribute
+    @XmlAttribute(name = "propertyPath")
     protected String propertyPath;
 
     /**
@@ -134,6 +143,54 @@ public class EqualType
     }
 
     /**
+     * Gets the value of the kualiDecimalValue property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getKualiDecimalValue() {
+        return kualiDecimalValue;
+    }
+
+    /**
+     * Sets the value of the kualiDecimalValue property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setKualiDecimalValue(BigDecimal value) {
+        this.kualiDecimalValue = value;
+    }
+
+    /**
+     * Gets the value of the kualiPercentValue property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getKualiPercentValue() {
+        return kualiPercentValue;
+    }
+
+    /**
+     * Sets the value of the kualiPercentValue property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setKualiPercentValue(BigDecimal value) {
+        this.kualiPercentValue = value;
+    }
+
+    /**
      * Gets the value of the integerValue property.
      * 
      * @return
@@ -155,6 +212,30 @@ public class EqualType
      */
     public void setIntegerValue(BigInteger value) {
         this.integerValue = value;
+    }
+
+    /**
+     * Gets the value of the booleanValue property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isBooleanValue() {
+        return booleanValue;
+    }
+
+    /**
+     * Sets the value of the booleanValue property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setBooleanValue(Boolean value) {
+        this.booleanValue = value;
     }
 
     /**

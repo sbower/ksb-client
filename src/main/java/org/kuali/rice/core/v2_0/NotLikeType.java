@@ -46,7 +46,7 @@ public class NotLikeType
     protected String stringValue;
     @XmlAnyElement
     protected List<Element> any;
-    @XmlAttribute
+    @XmlAttribute(name = "propertyPath")
     protected String propertyPath;
 
     /**
