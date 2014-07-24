@@ -41,7 +41,7 @@ public class NullType
 
     @XmlAnyElement
     protected List<Element> any;
-    @XmlAttribute
+    @XmlAttribute(name = "propertyPath")
     protected String propertyPath;
 
     /**

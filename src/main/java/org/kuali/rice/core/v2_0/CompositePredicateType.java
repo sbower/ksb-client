@@ -32,6 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}lessThan"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}lessThanOrEqual"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}like"/>
+ *           &lt;element ref="{http://rice.kuali.org/core/v2_0}likeIgnoreCase"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}notEqual"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}notEqualIgnoreCase"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}notIn"/>
@@ -63,23 +64,24 @@ public abstract class CompositePredicateType
 
     @XmlElements({
         @XmlElement(name = "and", type = AndType.class),
-        @XmlElement(name = "notInIgnoreCase", type = NotInIgnoreCaseType.class),
-        @XmlElement(name = "lessThan", type = LessThanType.class),
         @XmlElement(name = "equal", type = EqualType.class),
-        @XmlElement(name = "lessThanOrEqual", type = LessThanOrEqualType.class),
-        @XmlElement(name = "notEqual", type = NotEqualType.class),
-        @XmlElement(name = "null", type = NullType.class),
-        @XmlElement(name = "notLike", type = NotLikeType.class),
-        @XmlElement(name = "greaterThanOrEqual", type = GreaterThanOrEqualType.class),
-        @XmlElement(name = "inIgnoreCase", type = InIgnoreCaseType.class),
-        @XmlElement(name = "notNull", type = NotNullType.class),
-        @XmlElement(name = "notEqualIgnoreCase", type = NotEqualIgnoreCaseType.class),
-        @XmlElement(name = "notIn", type = NotInType.class),
-        @XmlElement(name = "or", type = OrType.class),
-        @XmlElement(name = "like", type = LikeType.class),
         @XmlElement(name = "equalIgnoreCase", type = EqualIgnoreCaseType.class),
         @XmlElement(name = "greaterThan", type = GreaterThanType.class),
-        @XmlElement(name = "in", type = InType.class)
+        @XmlElement(name = "greaterThanOrEqual", type = GreaterThanOrEqualType.class),
+        @XmlElement(name = "in", type = InType.class),
+        @XmlElement(name = "inIgnoreCase", type = InIgnoreCaseType.class),
+        @XmlElement(name = "lessThan", type = LessThanType.class),
+        @XmlElement(name = "lessThanOrEqual", type = LessThanOrEqualType.class),
+        @XmlElement(name = "like", type = LikeType.class),
+        @XmlElement(name = "likeIgnoreCase", type = LikeIgnoreCaseType.class),
+        @XmlElement(name = "notEqual", type = NotEqualType.class),
+        @XmlElement(name = "notEqualIgnoreCase", type = NotEqualIgnoreCaseType.class),
+        @XmlElement(name = "notIn", type = NotInType.class),
+        @XmlElement(name = "notInIgnoreCase", type = NotInIgnoreCaseType.class),
+        @XmlElement(name = "notLike", type = NotLikeType.class),
+        @XmlElement(name = "notNull", type = NotNullType.class),
+        @XmlElement(name = "null", type = NullType.class),
+        @XmlElement(name = "or", type = OrType.class)
     })
     protected List<AbstractPredicate> andOrEqualOrEqualIgnoreCase;
 
@@ -102,23 +104,24 @@ public abstract class CompositePredicateType
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link AndType }
-     * {@link NotInIgnoreCaseType }
-     * {@link LessThanType }
      * {@link EqualType }
-     * {@link LessThanOrEqualType }
-     * {@link NotEqualType }
-     * {@link NullType }
-     * {@link NotLikeType }
-     * {@link GreaterThanOrEqualType }
-     * {@link InIgnoreCaseType }
-     * {@link NotNullType }
-     * {@link NotEqualIgnoreCaseType }
-     * {@link NotInType }
-     * {@link OrType }
-     * {@link LikeType }
      * {@link EqualIgnoreCaseType }
      * {@link GreaterThanType }
+     * {@link GreaterThanOrEqualType }
      * {@link InType }
+     * {@link InIgnoreCaseType }
+     * {@link LessThanType }
+     * {@link LessThanOrEqualType }
+     * {@link LikeType }
+     * {@link LikeIgnoreCaseType }
+     * {@link NotEqualType }
+     * {@link NotEqualIgnoreCaseType }
+     * {@link NotInType }
+     * {@link NotInIgnoreCaseType }
+     * {@link NotLikeType }
+     * {@link NotNullType }
+     * {@link NullType }
+     * {@link OrType }
      * 
      * 
      */

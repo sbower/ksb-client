@@ -19,6 +19,7 @@ import org.kuali.rice.kew.v2_0.WorkflowDocumentService;
 import org.kuali.rice.kim.v2_0.EntityType;
 import org.kuali.rice.kim.v2_0.GroupService;
 import org.kuali.rice.kim.v2_0.IdentityService;
+import org.kuali.rice.kim.v2_0.PermissionService;
 import org.kuali.rice.kim.v2_0.RoleService;
 import org.kuali.rice.location.v2_0.CountryService;
 import org.kuali.rice.location.v2_0.PostalCodeService;
@@ -146,6 +147,15 @@ public class KSBServiceClientTest {
      NamespaceService svc = client.getNamespaceService();
   
      assertEquals("Workflow", svc.getNamespace("KR-WKFLW").getName());
+     
+   }
+   
+   @Test
+   public void permissionServiceTest() throws Exception {
+     KSBServiceClient client = new KSBServiceClient();  
+     PermissionService svc = client.getPermissionService();
+     
+     assertEquals("Use Document Operation Screen", svc.getPermission("140").getName());
      
    }
 }

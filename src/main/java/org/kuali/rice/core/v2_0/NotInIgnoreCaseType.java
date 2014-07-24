@@ -46,7 +46,7 @@ public class NotInIgnoreCaseType
     protected List<String> stringValue;
     @XmlAnyElement
     protected List<Element> any;
-    @XmlAttribute
+    @XmlAttribute(name = "propertyPath")
     protected String propertyPath;
 
     /**

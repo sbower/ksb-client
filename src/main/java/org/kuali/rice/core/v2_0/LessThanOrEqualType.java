@@ -27,6 +27,8 @@ import org.w3c.dom.Element;
  *         &lt;choice>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}stringValue"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}decimalValue"/>
+ *           &lt;element ref="{http://rice.kuali.org/core/v2_0}kualiDecimalValue"/>
+ *           &lt;element ref="{http://rice.kuali.org/core/v2_0}kualiPercentValue"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}integerValue"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}dateTimeValue"/>
  *         &lt;/choice>
@@ -44,6 +46,8 @@ import org.w3c.dom.Element;
 @XmlType(name = "LessThanOrEqualType", propOrder = {
     "stringValue",
     "decimalValue",
+    "kualiDecimalValue",
+    "kualiPercentValue",
     "integerValue",
     "dateTimeValue",
     "any"
@@ -54,11 +58,13 @@ public class LessThanOrEqualType
 
     protected String stringValue;
     protected BigDecimal decimalValue;
+    protected BigDecimal kualiDecimalValue;
+    protected BigDecimal kualiPercentValue;
     protected BigInteger integerValue;
     protected XMLGregorianCalendar dateTimeValue;
     @XmlAnyElement
     protected List<Element> any;
-    @XmlAttribute
+    @XmlAttribute(name = "propertyPath")
     protected String propertyPath;
 
     /**
@@ -107,6 +113,54 @@ public class LessThanOrEqualType
      */
     public void setDecimalValue(BigDecimal value) {
         this.decimalValue = value;
+    }
+
+    /**
+     * Gets the value of the kualiDecimalValue property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getKualiDecimalValue() {
+        return kualiDecimalValue;
+    }
+
+    /**
+     * Sets the value of the kualiDecimalValue property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setKualiDecimalValue(BigDecimal value) {
+        this.kualiDecimalValue = value;
+    }
+
+    /**
+     * Gets the value of the kualiPercentValue property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getKualiPercentValue() {
+        return kualiPercentValue;
+    }
+
+    /**
+     * Sets the value of the kualiPercentValue property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setKualiPercentValue(BigDecimal value) {
+        this.kualiPercentValue = value;
     }
 
     /**

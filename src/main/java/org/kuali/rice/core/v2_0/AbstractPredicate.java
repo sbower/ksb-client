@@ -30,6 +30,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlSeeAlso({
     NotEqualIgnoreCaseType.class,
     NotInIgnoreCaseType.class,
+    LikeIgnoreCaseType.class,
     LessThanType.class,
     NotEqualType.class,
     NullType.class,
@@ -38,11 +39,11 @@ import javax.xml.bind.annotation.XmlType;
     LikeType.class,
     InType.class,
     GreaterThanOrEqualType.class,
-    NotInType.class,
     InIgnoreCaseType.class,
+    NotInType.class,
     GreaterThanType.class,
-    NotLikeType.class,
     LessThanOrEqualType.class,
+    NotLikeType.class,
     NotNullType.class,
     CompositePredicateType.class
 })
