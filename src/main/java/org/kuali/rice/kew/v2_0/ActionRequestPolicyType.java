@@ -1,0 +1,38 @@
+
+package org.kuali.rice.kew.v2_0;
+
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for ActionRequestPolicyType.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * <pre>
+ * &lt;simpleType name="ActionRequestPolicyType">
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     &lt;enumeration value="F"/>
+ *     &lt;enumeration value="A"/>
+ *   &lt;/restriction>
+ * &lt;/simpleType>
+ * </pre>
+ * 
+ */
+@XmlType(name = "ActionRequestPolicyType")
+@XmlEnum
+public enum ActionRequestPolicyType {
+
+    F,
+    A;
+
+    public String value() {
+        return name();
+    }
+
+    public static ActionRequestPolicyType fromValue(String v) {
+        return valueOf(v);
+    }
+
+}

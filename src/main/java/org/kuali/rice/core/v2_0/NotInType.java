@@ -5,13 +5,12 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlElementRefs;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElements;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 import org.w3c.dom.Element;
@@ -31,8 +30,6 @@ import org.w3c.dom.Element;
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}stringValue"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}dateTimeValue"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}integerValue"/>
- *           &lt;element ref="{http://rice.kuali.org/core/v2_0}kualiDecimalValue"/>
- *           &lt;element ref="{http://rice.kuali.org/core/v2_0}kualiPercentValue"/>
  *           &lt;element ref="{http://rice.kuali.org/core/v2_0}decimalValue"/>
  *         &lt;/choice>
  *         &lt;any processContents='skip' namespace='##other' maxOccurs="unbounded" minOccurs="0"/>
@@ -54,18 +51,16 @@ public class NotInType
     extends AbstractPredicate
 {
 
-    @XmlElementRefs({
-        @XmlElementRef(name = "decimalValue", namespace = "http://rice.kuali.org/core/v2_0", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "stringValue", namespace = "http://rice.kuali.org/core/v2_0", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "dateTimeValue", namespace = "http://rice.kuali.org/core/v2_0", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "kualiDecimalValue", namespace = "http://rice.kuali.org/core/v2_0", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "kualiPercentValue", namespace = "http://rice.kuali.org/core/v2_0", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "integerValue", namespace = "http://rice.kuali.org/core/v2_0", type = JAXBElement.class, required = false)
+    @XmlElements({
+        @XmlElement(name = "integerValue", type = BigInteger.class),
+        @XmlElement(name = "stringValue", type = String.class),
+        @XmlElement(name = "dateTimeValue", type = XMLGregorianCalendar.class),
+        @XmlElement(name = "decimalValue", type = BigDecimal.class)
     })
-    protected List<JAXBElement<?>> stringValueOrDateTimeValueOrIntegerValue;
+    protected List<Object> stringValueOrDateTimeValueOrIntegerValue;
     @XmlAnyElement
     protected List<Element> any;
-    @XmlAttribute(name = "propertyPath")
+    @XmlAttribute
     protected String propertyPath;
 
     /**
@@ -86,18 +81,16 @@ public class NotInType
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
-     * {@link JAXBElement }{@code <}{@link BigInteger }{@code >}
-     * {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
-     * {@link JAXBElement }{@code <}{@link BigDecimal }{@code >}
+     * {@link BigInteger }
+     * {@link String }
+     * {@link XMLGregorianCalendar }
+     * {@link BigDecimal }
      * 
      * 
      */
-    public List<JAXBElement<?>> getStringValueOrDateTimeValueOrIntegerValue() {
+    public List<Object> getStringValueOrDateTimeValueOrIntegerValue() {
         if (stringValueOrDateTimeValueOrIntegerValue == null) {
-            stringValueOrDateTimeValueOrIntegerValue = new ArrayList<JAXBElement<?>>();
+            stringValueOrDateTimeValueOrIntegerValue = new ArrayList<Object>();
         }
         return this.stringValueOrDateTimeValueOrIntegerValue;
     }

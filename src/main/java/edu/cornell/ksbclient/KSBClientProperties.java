@@ -100,9 +100,13 @@ public class KSBClientProperties {
   public static final QName QNAME_NOTE_SERVICE = new QName("http://rice.kuali.org/kew/v2_0", "noteService");
   public static final QName QNAME_NOTE_SERVICE_PORT = new QName("http://rice.kuali.org/kew/v2_0", "noteServicePort"); 
 
-  public static final String QNAME_PERMISSION_SERVICE_WSDL_LOCATION = "/remoting/soap/kim/v2_0/permissionService?wsdl";
+  public static final String PERMISSION_SERVICE_WSDL_LOCATION = "/remoting/soap/kim/v2_0/permissionService?wsdl";
   public static final QName QNAME_PERMISSION_SERVICE = new QName("http://rice.kuali.org/kim/v2_0", "permissionService");
   public static final QName QNAME_PERMISSION_SERVICE_PORT = new QName("http://rice.kuali.org/kim/v2_0", "permissionServicePort"); 
+  
+  public static final String PEOPLE_FLOW__WSDL_LOCATION = "/remoting/soap/kew/v2_0/peopleFlowService?wsdl";
+  public static final QName QNAME_PEOPLE_FLOW_SERVICE = new QName("http://rice.kuali.org/kew/v2_0", "peopleFlowService");
+  public static final QName QNAME_PEOPLE_FLOW_SERVICE_PORT = new QName("http://rice.kuali.org/kew/v2_0", "peopleFlowServicePort"); 
 
 }
 
