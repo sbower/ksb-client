@@ -107,6 +107,10 @@ public class KSBClientProperties {
   public static final String PEOPLE_FLOW__WSDL_LOCATION = "/remoting/soap/kew/v2_0/peopleFlowService?wsdl";
   public static final QName QNAME_PEOPLE_FLOW_SERVICE = new QName("http://rice.kuali.org/kew/v2_0", "peopleFlowService");
   public static final QName QNAME_PEOPLE_FLOW_SERVICE_PORT = new QName("http://rice.kuali.org/kew/v2_0", "peopleFlowServicePort"); 
+  
+  public static final String PREFERENCE__WSDL_LOCATION = "/remoting/soap/kew/v2_0/preferencesService?wsdl";
+  public static final QName QNAME_PREFERENCE_SERVICE = new QName("http://rice.kuali.org/kew/v2_0", "preferencesService");
+  public static final QName QNAME_PREFERENCE_SERVICE_PORT = new QName("http://rice.kuali.org/kew/v2_0", "preferencesServicePort"); 
 
 }
 

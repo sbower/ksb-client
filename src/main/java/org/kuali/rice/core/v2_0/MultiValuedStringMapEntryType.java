@@ -46,7 +46,7 @@ import javax.xml.bind.annotation.XmlType;
 public class MultiValuedStringMapEntryType {
 
     protected MultiValuedStringMapEntryType.Values values;
-    @XmlAttribute
+    @XmlAttribute(name = "key")
     protected String key;
 
     /**
