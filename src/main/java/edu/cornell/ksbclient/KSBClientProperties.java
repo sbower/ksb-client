@@ -112,5 +112,8 @@ public class KSBClientProperties {
   public static final QName QNAME_PREFERENCE_SERVICE = new QName("http://rice.kuali.org/kew/v2_0", "preferencesService");
   public static final QName QNAME_PREFERENCE_SERVICE_PORT = new QName("http://rice.kuali.org/kew/v2_0", "preferencesServicePort"); 
 
+  public static final String CORESERVICECACHEADMINSERVICE_WSDL_LOCATION = "/remoting/soap/core/v2_0/coreServiceCacheAdminService?wsdl";
+  public static final QName QNAME_CORESERVICECACHEADMIN_SERVICE = new QName("http://rice.kuali.org/core/v2_0", "coreServiceCacheAdminService");
+  public static final QName QNAME_CORESERVICECACHEADMIN_SERVICE_PORT = new QName("http://rice.kuali.org/core/v2_0", "CacheAdminServicePort"); 
 }
 

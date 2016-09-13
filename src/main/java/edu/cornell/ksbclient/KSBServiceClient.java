@@ -16,6 +16,7 @@ import org.apache.cxf.endpoint.Endpoint;
 import org.apache.cxf.frontend.ClientProxy;
 import org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor;
 import org.apache.ws.security.handler.WSHandlerConstants;
+import org.kuali.rice.core.v2_0.CacheAdminService;
 import org.kuali.rice.core.v2_0.ComponentService;
 import org.kuali.rice.core.v2_0.NamespaceService;
 import org.kuali.rice.core.v2_0.ParameterService;
@@ -190,6 +191,11 @@ public class KSBServiceClient {
     return getService(KSBClientProperties.PEOPLE_FLOW__WSDL_LOCATION, KSBClientProperties.QNAME_PEOPLE_FLOW_SERVICE,
           KSBClientProperties.QNAME_PEOPLE_FLOW_SERVICE_PORT, PeopleFlowService.class);
   }
+  
+  public CacheAdminService getCoreCacheAdminService() {
+	    return getService(KSBClientProperties.CORESERVICECACHEADMINSERVICE_WSDL_LOCATION, KSBClientProperties.QNAME_CORESERVICECACHEADMIN_SERVICE,
+	          KSBClientProperties.QNAME_CORESERVICECACHEADMIN_SERVICE_PORT, CacheAdminService.class);
+	  }
   
   private <T> T getService(String wsdlocation, QName tService, QName tServicePort, Class<T> serviceEndpointInterface) {
 	  GenericServiceImpl svc;

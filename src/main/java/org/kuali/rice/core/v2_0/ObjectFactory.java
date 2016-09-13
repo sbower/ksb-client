@@ -27,6 +27,7 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _CacheTarget_QNAME = new QName("http://rice.kuali.org/core/v2_0", "cacheTarget");
     private final static QName _Or_QNAME = new QName("http://rice.kuali.org/core/v2_0", "or");
     private final static QName _IllegalArgumentFault_QNAME = new QName("http://rice.kuali.org/core/v2_0", "IllegalArgumentFault");
     private final static QName _DateTimeValue_QNAME = new QName("http://rice.kuali.org/core/v2_0", "dateTimeValue");
@@ -541,6 +542,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://rice.kuali.org/core/v2_0", name = "null")
     public JAXBElement<NullType> createNull(NullType value) {
         return new JAXBElement<NullType>(_Null_QNAME, NullType.class, null, value);
+    }
+    
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CacheTargetType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://rice.kuali.org/core/v2_0", name = "cacheTarget")
+    public JAXBElement<CacheTargetType> createCacheTarget(CacheTargetType value) {
+        return new JAXBElement<CacheTargetType>(_CacheTarget_QNAME, CacheTargetType.class, null, value);
     }
 
 }
