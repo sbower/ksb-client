@@ -1,7 +1,7 @@
-#!/usr/bin/env ruby 
+#!/usr/bin/env ruby
 
 require 'java'
-require '../target/ksb-client-1.0-SNAPSHOT-jar-with-dependencies.jar'
+require '../target/ksb-client-1.0.4-SNAPSHOT-jar-with-dependencies.jar'
 
 java_import 'java.net.URL'
 
