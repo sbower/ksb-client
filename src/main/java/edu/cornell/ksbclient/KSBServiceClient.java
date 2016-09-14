@@ -209,12 +209,17 @@ public class KSBServiceClient {
   public org.kuali.rice.kim.v2_0.CacheAdminService getKimCacheAdminService() {
 	    return getService(KSBClientProperties.KIMSERVICECACHEADMINSERVICE_WSDL_LOCATION, KSBClientProperties.QNAME_KIMSERVICECACHEADMIN_SERVICE,
 	          KSBClientProperties.QNAME_KIMSERVICECACHEADMIN_SERVICE_PORT, org.kuali.rice.kim.v2_0.CacheAdminService.class);
-}
+  }
   
   public org.kuali.rice.kim.v2_0.CacheAdminService getkimCacheDistributionQueue() {
 	    return getService(KSBClientProperties.KIMQSERVICECACHEADMINSERVICE_WSDL_LOCATION, KSBClientProperties.QNAME_KIMQSERVICECACHEADMIN_SERVICE,
 	          KSBClientProperties.QNAME_KIMSQERVICECACHEADMIN_SERVICE_PORT, org.kuali.rice.kim.v2_0.CacheAdminService.class);
-}
+  }
+  
+  public org.kuali.rice.krms.v2_0.CacheAdminService getkrmsCacheAdminService() {
+	    return getService(KSBClientProperties.KRMSSERVICECACHEADMINSERVICE_WSDL_LOCATION, KSBClientProperties.QNAME_KRMSSERVICECACHEADMIN_SERVICE,
+	          KSBClientProperties.QNAME_KRMSSERVICECACHEADMIN_SERVICE_PORT, org.kuali.rice.krms.v2_0.CacheAdminService.class);
+  }
   
   private <T> T getService(String wsdlocation, QName tService, QName tServicePort, Class<T> serviceEndpointInterface) {
 	  GenericServiceImpl svc;
