@@ -11,9 +11,9 @@
   </properties>
   
   <scm>
-	<url>https://github.com/CU-CommunityApps/ksb-client</url>
-	<connection>scm:git:git@github.com:CU-CommunityApps/ksb-client.git</connection>
-	<developerConnection>scm:git:git@github.com:CU-CommunityApps/ksb-client.git</developerConnection>
+	<url>https://github.com/sbower/ksb-client</url>
+	<connection>scm:git:git@github.com:sbower/ksb-client.git</connection>
+	<developerConnection>scm:git:git@github.com:sbower/ksb-client.git</developerConnection>
   </scm>
 	
   <build>
