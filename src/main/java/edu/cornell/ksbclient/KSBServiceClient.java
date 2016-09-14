@@ -197,8 +197,13 @@ public class KSBServiceClient {
   }
   
   public org.kuali.rice.kew.v2_0.CacheAdminService getKewCacheAdminService() {
-	    return getService(KSBClientProperties.CORESERVICECACHEADMINSERVICE_WSDL_LOCATION, KSBClientProperties.QNAME_CORESERVICECACHEADMIN_SERVICE,
-	          KSBClientProperties.QNAME_CORESERVICECACHEADMIN_SERVICE_PORT, org.kuali.rice.kew.v2_0.CacheAdminService.class);
+	    return getService(KSBClientProperties.KEWCACHEADMINSERVICE_WSDL_LOCATION, KSBClientProperties.QNAME_KEWSERVICECACHEADMIN_SERVICE,
+	          KSBClientProperties.QNAME_KEWSERVICECACHEADMIN_SERVICE_PORT, org.kuali.rice.kew.v2_0.CacheAdminService.class);
+  }
+  
+  public org.kuali.rice.kew.v2_0.CacheAdminService kewCacheDistributionQueue() {
+	    return getService(KSBClientProperties.KEWQCACHEADMINSERVICE_WSDL_LOCATION, KSBClientProperties.QNAME_KEWQSERVICECACHEADMIN_SERVICE,
+	          KSBClientProperties.QNAME_KEWQSERVICECACHEADMIN_SERVICE_PORT, org.kuali.rice.kew.v2_0.CacheAdminService.class);
   }
   
   private <T> T getService(String wsdlocation, QName tService, QName tServicePort, Class<T> serviceEndpointInterface) {
