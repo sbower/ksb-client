@@ -206,6 +206,11 @@ public class KSBServiceClient {
 	          KSBClientProperties.QNAME_KEWQSERVICECACHEADMIN_SERVICE_PORT, org.kuali.rice.kew.v2_0.CacheAdminService.class);
   }
   
+  public org.kuali.rice.kim.v2_0.CacheAdminService getKimCacheAdminService() {
+	    return getService(KSBClientProperties.KIMSERVICECACHEADMINSERVICE_WSDL_LOCATION, KSBClientProperties.QNAME_KIMSERVICECACHEADMIN_SERVICE,
+	          KSBClientProperties.QNAME_KIMSERVICECACHEADMIN_SERVICE_PORT, org.kuali.rice.kim.v2_0.CacheAdminService.class);
+}
+  
   private <T> T getService(String wsdlocation, QName tService, QName tServicePort, Class<T> serviceEndpointInterface) {
 	  GenericServiceImpl svc;
 	  try {

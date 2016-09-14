@@ -123,5 +123,10 @@ public class KSBClientProperties {
   public static final String KEWQCACHEADMINSERVICE_WSDL_LOCATION = "/remoting/soap/kew/v2_0/kewCacheDistributionQueue?wsdl";
   public static final QName QNAME_KEWQSERVICECACHEADMIN_SERVICE = new QName("http://rice.kuali.org/kew/v2_0", "kewCacheDistributionQueue");
   public static final QName QNAME_KEWQSERVICECACHEADMIN_SERVICE_PORT = new QName("http://rice.kuali.org/kew/v2_0", "CacheAdminServicePort"); 
+  
+  public static final String KIMSERVICECACHEADMINSERVICE_WSDL_LOCATION = "/remoting/soap/kim/v2_0/kimCacheAdminService?wsdl";
+  public static final QName QNAME_KIMSERVICECACHEADMIN_SERVICE = new QName("http://rice.kuali.org/kim/v2_0", "kimCacheAdminService");
+  public static final QName QNAME_KIMSERVICECACHEADMIN_SERVICE_PORT = new QName("http://rice.kuali.org/kim/v2_0", "CacheAdminServicePort"); 
+  
 }
 
