@@ -128,5 +128,9 @@ public class KSBClientProperties {
   public static final QName QNAME_KIMSERVICECACHEADMIN_SERVICE = new QName("http://rice.kuali.org/kim/v2_0", "kimCacheAdminService");
   public static final QName QNAME_KIMSERVICECACHEADMIN_SERVICE_PORT = new QName("http://rice.kuali.org/kim/v2_0", "CacheAdminServicePort"); 
   
+  public static final String KIMQSERVICECACHEADMINSERVICE_WSDL_LOCATION = "/remoting/soap/kim/v2_0/kimCacheDistributionQueue?wsd";
+  public static final QName QNAME_KIMQSERVICECACHEADMIN_SERVICE = new QName("http://rice.kuali.org/kim/v2_0", "kimCacheDistributionQueue");
+  public static final QName QNAME_KIMSQERVICECACHEADMIN_SERVICE_PORT = new QName("http://rice.kuali.org/kim/v2_0", "CacheAdminServicePort"); 
+  
 }
 
